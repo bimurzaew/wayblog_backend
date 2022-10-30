@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const port = 4444
+
 const app = express();
 
 app.use(express.json());
@@ -14,11 +16,11 @@ mongoose
     "mongodb+srv://user:12345@cluster0.j8mrd.mongodb.net/blog?retryWrites=true&w=majority"
   )
   .then(() => {
-    app.listen(4444, (err) => {
+    app.listen(port, (err) => {
       if (err) {
         console.log(err);
       }
-      console.log("server has been started");
+      console.log(`server has been started on port ${port}`);
     });
     console.log("database has been started");
   })

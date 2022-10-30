@@ -86,7 +86,8 @@ module.exports.postsController = {
               message: "Статья не найдена",
             });
           }
-          res.json({ success: true });
+          console.log(postId)
+          res.json(postId);
         }
       );
     } catch (e) {
