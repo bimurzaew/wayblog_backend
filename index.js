@@ -13,10 +13,10 @@ app.use("/uploads", express.static("uploads"));
 
 mongoose
   .connect(
-    "mongodb+srv://user:12345@cluster0.j8mrd.mongodb.net/blog?retryWrites=true&w=majority"
+    process.env.MONGODB_URI
   )
   .then(() => {
-    app.listen(port, (err) => {
+    app.listen(process.end.PORT || port, (err) => {
       if (err) {
         console.log(err);
       }
